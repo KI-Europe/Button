@@ -63,13 +63,13 @@ export const TextInput = (props: Props) => {
     if (fileUploadRef) fileUploadRef.click();
   };
 
-  createEffect(() => {
-    if (!props.disabled && !isMobile() && inputRef) inputRef.focus();
-  });
+  // createEffect(() => {
+  //   if (!props.disabled && !isMobile() && inputRef) inputRef.focus();
+  // });
 
-  onMount(() => {
-    if (!isMobile() && inputRef) inputRef.focus();
-  });
+  // onMount(() => {
+  //   if (!isMobile() && inputRef) inputRef.focus();
+  // });
 
   const handleFileChange = (event: FileEvent<HTMLInputElement>) => {
     props.handleFileChange(event);
@@ -99,7 +99,7 @@ export const TextInput = (props: Props) => {
               buttonColor={props.sendButtonColor}
               type="button"
               class="m-0 h-14 flex items-center justify-center"
-              isDisabled={props.disabled  || isSendButtonDisabled()}
+              isDisabled={props.disabled || isSendButtonDisabled()}
               on:click={handleImageUploadClick}
             >
               <span style={{ 'font-family': 'Poppins, sans-serif' }}>Image Upload</span>
